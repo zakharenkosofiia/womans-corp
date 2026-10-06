@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Woman's Corp. — жіночі подорожі, ком'юніті та моменти, які хочеться прожити знову.">
+<title>Woman&#x27;s Corp. — Travel. Connect. Become.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#c98f9d;--milk:#f7f1ec;--wine:#641f32;--dark:#2b2022;--nude:#e8d5d0;--white:#fffaf7}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,sans-serif;background:var(--milk);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:absolute;top:0;left:0;width:100%;z-index:10;color:white}
+.logo,.footer-logo{font-size:18px;letter-spacing:3px;font-weight:600}.logo span,.footer-logo span{color:var(--nude)}
+.nav{display:flex;gap:34px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase}.nav a{opacity:.9}.nav a:hover{opacity:1}
+.header-btn{border:1px solid rgba(255,255,255,.65);padding:11px 21px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:23px}
+.hero{min-height:100vh;position:relative;background:linear-gradient(90deg,rgba(38,20,25,.65),rgba(80,35,48,.12)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85') center/cover;display:flex;align-items:center;color:white}
+.hero-content{position:relative;z-index:2;width:min(760px,90%);margin-left:10%;padding-top:45px}.eyebrow{font-size:10px;letter-spacing:3px;font-weight:600;margin-bottom:19px}.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(55px,7vw,100px);font-weight:400;line-height:.88;letter-spacing:-2px}.hero h1 em,h2 em{font-style:italic;color:var(--nude)}
+.hero-text{max-width:520px;margin:30px 0 32px;font-size:14px;line-height:1.8;color:#f8e9e5}.hero-actions{display:flex;align-items:center;gap:30px}.btn{display:inline-block;border:0;padding:15px 27px;font-size:10px;letter-spacing:1.7px;text-transform:uppercase;cursor:pointer}.btn-bordeaux{background:var(--wine);color:white}.text-link{font-size:10px;letter-spacing:1.7px;text-transform:uppercase}.text-link span{font-size:17px;margin-left:8px}.hero-scroll{position:absolute;bottom:28px;left:5%;font-size:9px;letter-spacing:2px}.hero-scroll span{margin-left:9px}
+.intro{text-align:center;padding:130px 20px 120px}.intro h2,.section-head h2,.experience h2,.contact h2{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,78px);font-weight:400;line-height:.94}.intro h2 em,.section-head h2 em,.experience h2 em,.contact h2 em{color:var(--wine)}.intro-copy{max-width:620px;margin:30px auto 0;font-size:14px;color:#6b5a5e;line-height:1.9}
+.trips{padding:30px 5% 130px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:45px}.trip-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.trip-card{grid-column:span 4}.trip-card.trip-main{grid-column:span 8}.trip-image{height:480px;position:relative;background-size:cover;background-position:center;overflow:hidden}.trip-main .trip-image{height:610px}.phuket{background-image:linear-gradient(0deg,rgba(45,15,25,.7),transparent 55%),url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1300&q=85')}.madeira{background-image:linear-gradient(0deg,rgba(45,15,25,.72),transparent 55%),url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85')}.vietnam{background-image:linear-gradient(0deg,rgba(45,15,25,.72),transparent 55%),url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=85')}.bali{background-image:linear-gradient(0deg,rgba(45,15,25,.72),transparent 55%),url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85')}.shanghai{background-image:linear-gradient(0deg,rgba(45,15,25,.72),transparent 55%),url('https://images.unsplash.com/photo-1538428494232-9c0d8a3ab403?auto=format&fit=crop&w=1000&q=85')}
+.trip-image:after{content:'';position:absolute;inset:0;background:rgba(100,31,50,.13);transition:.5s}.trip-image:hover:after{background:rgba(100,31,50,.02)}
+.trip-tag{position:absolute;top:20px;left:20px;z-index:2;color:white;font-size:9px;letter-spacing:1.5px;border:1px solid rgba(255,255,255,.6);padding:7px 11px}.trip-info{position:absolute;bottom:25px;left:25px;z-index:2;color:white}.trip-info p{font-size:9px;letter-spacing:2px}.trip-info h3{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:400;line-height:1}.trip-info span{font-size:10px;opacity:.9}
+.experience{display:grid;grid-template-columns:1fr 1fr;background:#ead9d5}.experience-image{min-height:730px;background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=85') center/cover}.experience-content{padding:110px 10%}.experience h2{margin-bottom:28px}.experience-content>p{font-size:14px;line-height:1.9;max-width:490px;color:#68575a}.features{margin-top:55px}.features>div{border-top:1px solid rgba(100,31,50,.22);padding:20px 0;display:grid;grid-template-columns:45px 1fr}.features span{font-size:10px;color:var(--wine);letter-spacing:1px}.features strong{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:500}.features p{grid-column:2;font-size:11px;color:#766568;margin-top:2px}
+.quote{background:var(--wine);color:white;text-align:center;padding:130px 20px}.quote-mark{font-family:'Cormorant Garamond',serif;font-size:100px;height:55px;color:var(--pink)}blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,68px);line-height:.95;font-weight:400}.quote p{font-size:9px;letter-spacing:3px;margin-top:30px;color:var(--nude)}
+.contact{padding:120px 20px;background:var(--pink)}.contact-inner{max-width:800px;margin:auto;text-align:center}.contact h2{color:white}.contact h2 em{color:var(--wine)}.contact-inner>p:not(.eyebrow):not(.form-note){max-width:550px;margin:28px auto 35px;color:#563e44;font-size:13px}.contact form{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}.contact input,.contact select{width:100%;border:1px solid rgba(100,31,50,.28);background:rgba(255,255,255,.5);padding:16px;color:var(--dark);font-family:Montserrat;font-size:11px;outline:none}.contact select{grid-column:span 2}.contact button{grid-column:span 2;width:100%;margin-top:5px}.form-note{font-size:11px;margin-top:15px;color:var(--wine);min-height:18px}
+footer{background:#2b2022;color:#e8d5d0;padding:45px 5%;display:flex;align-items:center;gap:30px;flex-wrap:wrap}.footer-logo{color:white}.footer-links{margin-left:auto;display:flex;gap:22px;font-size:10px;letter-spacing:1px;text-transform:uppercase}footer small{width:100%;font-size:9px;opacity:.5}
+@media(max-width:800px){.nav,.header-btn{display:none}.menu-btn{display:block}.hero-content{margin-left:7%}.hero h1{font-size:58px}.intro{padding:90px 20px}.section-head{display:block}.section-head .text-link{display:inline-block;margin-top:20px}.trip-card,.trip-card.trip-main{grid-column:span 12}.trip-image,.trip-main .trip-image{height:520px}.experience{grid-template-columns:1fr}.experience-image{min-height:480px}.experience-content{padding:75px 8%}.contact form{grid-template-columns:1fr}.contact select,.contact button{grid-column:span 1}.footer-links{margin-left:0}.hero{min-height:92vh}}
+
+</style>
+</head>
+<body>
+
+
+<header class="header">
+  <a href="#top" class="logo">WOMAN'S <span>CORP.</span></a>
+  <nav class="nav">
+    <a href="#trips">Подорожі</a>
+    <a href="#about">Про нас</a>
+    <a href="#experience">Формат</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+  <a href="#contact" class="header-btn">Приєднатися</a>
+  <button class="menu-btn" aria-label="Меню">☰</button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">WOMEN'S TRAVEL COMMUNITY</p>
+      <h1>Подорожі,<br><em>які залишаються</em><br>з тобою назавжди.</h1>
+      <p class="hero-text">Красиві місця. Сильне оточення. Фотографії, які хочеться передивлятися. І ти — у центрі кожної історії.</p>
+      <div class="hero-actions">
+        <a href="#trips" class="btn btn-bordeaux">Обрати подорож</a>
+        <a href="#about" class="text-link">Дізнатися більше <span>→</span></a>
+      </div>
+    </div>
+    <div class="hero-scroll">SCROLL <span>↓</span></div>
+  </section>
+
+  <section class="intro" id="about">
+    <p class="eyebrow">WOMAN'S CORP.</p>
+    <h2>Це більше, ніж<br><em>просто подорож.</em></h2>
+    <p class="intro-copy">Woman's Corp. — це простір для жінок, які хочуть відкривати світ, знайомитися з новими людьми, створювати красиві спогади та дозволяти собі більше.</p>
+  </section>
+
+  <section class="trips" id="trips">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">UPCOMING TRIPS</p>
+        <h2>Наші <em>подорожі</em></h2>
+      </div>
+      <a href="#contact" class="text-link">Усі напрямки →</a>
+    </div>
+
+    <div class="trip-grid">
+      <article class="trip-card trip-main">
+        <div class="trip-image phuket">
+          <span class="trip-tag">16–27 NOV 2026</span>
+          <div class="trip-info">
+            <p>THAILAND</p>
+            <h3>Phuket</h3>
+            <span>Phi Phi • Similan • Villa life</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip-card">
+        <div class="trip-image madeira">
+          <span class="trip-tag">30 NOV — 4 DEC 2026</span>
+          <div class="trip-info">
+            <p>PORTUGAL</p>
+            <h3>Madeira</h3>
+            <span>Ocean • Mountains • Girls trip</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip-card">
+        <div class="trip-image vietnam">
+          <span class="trip-tag">7–18 MAR 2027</span>
+          <div class="trip-info">
+            <p>VIETNAM</p>
+            <h3>Vietnam</h3>
+            <span>Culture • Beauty • Adventure</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip-card">
+        <div class="trip-image bali">
+          <span class="trip-tag">18–31 MAY 2027</span>
+          <div class="trip-info">
+            <p>INDONESIA</p>
+            <h3>Bali</h3>
+            <span>Ubud • Nusa Penida • Rituals</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="trip-card">
+        <div class="trip-image shanghai">
+          <span class="trip-tag">20–27 OCT 2027</span>
+          <div class="trip-info">
+            <p>CHINA</p>
+            <h3>Shanghai</h3>
+            <span>City energy • Culture • Style</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="experience-image"></div>
+    <div class="experience-content">
+      <p class="eyebrow">THE WOMAN'S CORP. EXPERIENCE</p>
+      <h2>Ми створюємо<br><em>історії, а не маршрути.</em></h2>
+      <p>Кожна наша подорож продумана так, щоб ти не просто побачила нову країну, а прожила її.</p>
+      <div class="features">
+        <div><span>01</span><strong>24/7 Фотограф</strong><p>Твої найкращі моменти професійно збережені.</p></div>
+        <div><span>02</span><strong>Жіноче коло</strong><p>Нові знайомства, підтримка та люди зі схожими цінностями.</p></div>
+        <div><span>03</span><strong>Особливі моменти</strong><p>Вечори, практики, фотосесії та локації поза стандартними маршрутами.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="quote-mark">“</div>
+    <blockquote>Іноді одна подорож<br>змінює набагато більше,<br>ніж просто твою геолокацію.</blockquote>
+    <p>— WOMAN'S CORP.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="eyebrow">READY FOR YOUR NEXT STORY?</p>
+      <h2>Твоя наступна<br><em>подорож починається тут.</em></h2>
+      <p>Залиш заявку — ми надішлемо актуальні напрямки, програми та деталі участі.</p>
+      <form id="tripForm">
+        <input type="text" name="name" placeholder="Твоє ім'я" required>
+        <input type="tel" name="phone" placeholder="Телефон / Telegram" required>
+        <select name="trip">
+          <option value="">Яка подорож цікавить?</option>
+          <option>Phuket — 16–27.11.2026</option>
+          <option>Madeira — 30.11–04.12.2026</option>
+          <option>Vietnam — 07–18.03.2027</option>
+          <option>Bali — 18–31.05.2027</option>
+          <option>Shanghai — 20–27.10.2027</option>
+          <option>Інший напрямок</option>
+        </select>
+        <button class="btn btn-bordeaux" type="submit">Хочу в Woman's Corp. →</button>
+      </form>
+      <p class="form-note" id="formNote"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo">WOMAN'S <span>CORP.</span></div>
+  <p>Travel. Connect. Become.</p>
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">Telegram</a>
+  </div>
+  <small>© 2026 Woman's Corp. All rights reserved.</small>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById("tripForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = this.elements.name.value.trim();
+  const trip = this.elements.trip.value;
+  const note = document.getElementById("formNote");
+  note.textContent = `Дякуємо, ${name}! Заявку${trip ? " на " + trip : ""} підготовлено. Додай свій Telegram/Instagram у контактах, щоб менеджер міг зв’язатися з тобою.`;
+  this.reset();
+});
+</script>
+</body>
+</html>
